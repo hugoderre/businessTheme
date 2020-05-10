@@ -4,71 +4,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>Countries</title>
     <link rel="stylesheet" href="src/css/style.css">
+    <script src="https://kit.fontawesome.com/f0e4e77069.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <table id="tbl">
-        <tr>
-            <th>Country</th>
-            <th>Population</th>
-        </tr>
-        <tr>
-            <td>Slovakia</td>
-            <td>5429000</td>
-        </tr>
-        <tr>
-            <td>Norway</td>
-            <td>5271000</td>
-        </tr>
-        <tr>
-            <td>Croa</td>
-            <td>4225000</td>
-        </tr>
-        <tr>
-            <td>Russia</td>
-            <td>143439000</td>
-        </tr>
-        <tr>
-            <td>Mexico</td>
-            <td>122273000</td>
-        </tr>
-        <tr>
-            <td>Vietnam</td>
-            <td>95261000</td>
-        </tr>
-        <tr>
-            <td>Sweden</td>
-            <td>9967000</td>
-        </tr>
-        <tr>
-            <td>Iceland</td>
-            <td>337600</td>
-        </tr>
-        <tr>
-            <td>Israel</td>
-            <td>8622000</td>
-        </tr>
-        <tr>
-            <td>Hungary</td>
-            <td>9830000</td>
-        </tr>
-        <tr>
-            <td>Germany</td>
-            <td>82175700</td>
-        </tr>
-        <tr>
-            <td>Japan</td>
-            <td>126650000</td>
-        </tr>
-    </table>
 
-    <button id="mybtn">Sort</button>
+    <header>
+        <nav id="top-bar">
+            <div id="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50px"
+                    height="48px">
+                    <image x="0px" y="0px" width="50px" height="48px"
+                        xlink:href="data:img/png;base64,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" />
+                </svg>
+            </div>
+            <ul>
+                <li>Home</li>
+                <li>Service</li>
+                <li>About us</li>
+                <li>Pricing table</li>
+                <li>How it work</li>
+                <li>Happy clients</li>
+                <li>Contact</li>
+            </ul>
+        </nav>
+        <section>
+            <h1>Boost up your local business</h1>
+            <p>Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum typesetting</p>
+            <div id="header__form">
+                <div>
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Full Name"></input>
+                </div>
+                <div>
+                    <i class="fas fa-envelope"></i>
+                    <input type="text" placeholder="Email Address">
+                </div>
+                <div>
+                    <i class="fas fa-phone-alt"></i>
+                    <input type="text" placeholder="Phone Number">
+                </div>
+
+                <button type="submit">Request a Quote</button>
+
+               
+            </div>
+        </section>
+    </header>
+    <div class="lala"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="build/js/bundle.js"></script>
 
 </body>
 <!-- Should be delete -->
+
 </html>

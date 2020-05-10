@@ -27,8 +27,8 @@ function serve() {
         server: "./"
     });
 
-    gulp.watch(`${paths.source}/css/*.scss`, css);
-    gulp.watch(`${paths.source}/*.html`).on('change', browserSync.reload);
+    gulp.watch(`${paths.source}/css/**/*.scss`, css);
+    gulp.watch(`./*.html`).on('change', browserSync.reload);
     gulp.watch(`${paths.source}/js/**/*.js`).on('change', browserSync.reload);
 }
 
