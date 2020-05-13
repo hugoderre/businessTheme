@@ -35,8 +35,8 @@ header {
         background-color: #709dca;
         color: #fff;
         position: relative;
-
-        &::after {
+        margin-bottom: 200px;
+        &::before {
             content: url("../img/laptop.png");
             
             // background-image: url("../img/laptop.png");
@@ -54,6 +54,7 @@ header {
             left:50%;
             transform: translateX(-50%);
         }
+        
     }
     h1 {
         padding-top: 110px;

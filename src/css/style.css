@@ -361,8 +361,9 @@ header section {
   text-align: center;
   background-color: #709dca;
   color: #fff;
-  position: relative; }
-  header section::after {
+  position: relative;
+  margin-bottom: 200px; }
+  header section::before {
     content: url("../img/laptop.png");
     background-repeat: no-repeat;
     z-index: 100;
@@ -372,10 +373,10 @@ header section {
     left: 50%;
     transform: translateX(-50%); }
     @media (max-width: 720px) {
-      header section::after {
+      header section::before {
         top: 64%; } }
     @media (max-width: 670px) {
-      header section::after {
+      header section::before {
         display: none; } }
 
 header h1 {
@@ -430,3 +431,45 @@ header #header__form {
     @media (max-width: 1128px) and (min-width: 920px) {
       header #header__form button {
         grid-column-start: 3; } }
+
+#services__container {
+  margin: auto;
+  max-width: 1170px; }
+  #services__container h2 {
+    font-family: "Gotham Black";
+    letter-spacing: -2px;
+    font-size: 30px;
+    color: #394b50;
+    margin-bottom: 5px; }
+  #services__container h2 > p {
+    text-align: center; }
+
+#services__items-container {
+  display: grid;
+  grid: auto-flow/ 1fr 1fr; }
+
+.services__item {
+  display: grid; }
+
+.services__text > p {
+  text-align: left; }
+
+#header__laptop-dots-container {
+  display: flex;
+  width: 70px;
+  justify-content: space-between;
+  position: absolute;
+  top: 700px;
+  left: 50%;
+  transform: translateX(-50%); }
+  @media (max-width: 720px) {
+    #header__laptop-dots-container {
+      top: 750px; } }
+  #header__laptop-dots-container .header__laptop-dot {
+    height: 15px;
+    width: 15px;
+    border: 2px solid #e9eaeb;
+    border-radius: 20px;
+    cursor: pointer; }
+    #header__laptop-dots-container .header__laptop-dot.active {
+      border-color: #1ca8dd; }

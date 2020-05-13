@@ -1,0 +1,23 @@
+#header__laptop-dots-container {
+    display:flex;
+    width:70px;
+    justify-content: space-between;
+    position:absolute;
+    top:700px;
+    @media (max-width:720px) {
+        top:750px;
+    }
+    left:50%;
+    transform: translateX(-50%);
+    .header__laptop-dot {
+        
+        height:15px;
+        width:15px;
+        border:2px solid #e9eaeb;
+        border-radius: 20px;
+        cursor: pointer;
+        &.active {
+            border-color: #1ca8dd;
+        }
+    }
+}

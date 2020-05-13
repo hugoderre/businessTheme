@@ -1,0 +1,25 @@
+#services__container {
+    margin: auto;
+    max-width: 1170px;
+    h2 {
+        font-family: "Gotham Black";
+        letter-spacing: -2px;
+        font-size: 30px;
+        color: rgb(57, 75, 80);
+        margin-bottom: 5px;
+    }
+    h2 > p {
+        text-align: center;
+    }
+}
+#services__items-container {
+    display:grid;
+    grid: auto-flow/ 1fr 1fr
+}
+.services__item {
+    display:grid;
+   
+}
+.services__text > p {
+    text-align: left;
+}
